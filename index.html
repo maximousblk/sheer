@@ -1,1 +1,51 @@
-<body oninput="i.srcdoc=h.value+'<style>'+c.value+'</style><script>'+j.value+'</script>'"><textarea id="h"></textarea><textarea id="c"></textarea><textarea id="j"></textarea><iframe id="i">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Web Playground</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-between;
+        align-items: stretch;
+      }
+
+      .editor-group {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        align-items: stretch;
+      }
+
+      .editor {
+        width: 100%;
+        height: 100%;
+        font-size: 18;
+      }
+
+      .output {
+        height: 100%;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body oninput="i.srcdoc=`<!DOCTYPE html><html>${html.value}<style>${css.value}</style><script>${js.value}</script></html>`">
+    <div class="editor-group">
+      <textarea class="editor" placeholder="HTML" id="html"></textarea>
+      <textarea class="editor" placeholder="CSS" id="css"></textarea>
+      <textarea class="editor" placeholder="JS" id="js"></textarea>
+    </div>
+    <iframe id="i" class="output" />
+  </body>
+</html>
