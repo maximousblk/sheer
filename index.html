@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Web Playground</title>
+
     <style>
       body {
         display: flex;
@@ -28,6 +29,7 @@
         height: 100%;
         font-size: 16px;
         padding: .5rem;
+        box-sizing: border-box;
       }
 
       .output {
@@ -42,11 +44,14 @@
   </head>
 
   <body oninput="i.srcdoc=`<!DOCTYPE html><html>${html.value}<style>${css.value}</style><script>${js.value}</script></html>`">
+
     <div class="editor-group">
       <textarea class="editor" placeholder="HTML" id="html"></textarea>
       <textarea class="editor" placeholder="CSS" id="css"></textarea>
       <textarea class="editor" placeholder="JS" id="js"></textarea>
     </div>
+
     <iframe id="i" class="output" />
+
   </body>
 </html>
