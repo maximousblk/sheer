@@ -30,6 +30,7 @@
         font-size: 16px;
         padding: .5rem;
         box-sizing: border-box;
+        resize: none;
       }
 
       .output {
@@ -44,7 +45,6 @@
   </head>
 
   <body oninput="i.srcdoc=`<!DOCTYPE html><html>${html.value}<style>${css.value}</style><script>${js.value}</script></html>`">
-
     <div class="editor-group">
       <textarea class="editor" placeholder="HTML" id="html"></textarea>
       <textarea class="editor" placeholder="CSS" id="css"></textarea>
@@ -52,6 +52,5 @@
     </div>
 
     <iframe id="i" class="output" />
-
   </body>
 </html>
